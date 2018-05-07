@@ -1,0 +1,61 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <!-- <div id="toolbar" class="toolbar">
+                        {:build_toolbar()}
+                    </div> -->
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            
+                            <th style="width: 100px">商品id</th>
+                            <th>名字</th>
+                            <th>首页图片</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                        <tr>
+                            <input type="hidden" id="hid" value="home_pics">
+                            <td style="vertical-align:middle" id="goods_id">{$rows.id}</td>
+                            <td style="vertical-align:middle">{$rows.name}</td>
+                            <td><a href="{$rows.home_url}" target="_blank"><img src="{$rows.home_url}" alt="" style="max-height:140px;max-width:160px"></a></td>
+                            <th style="vertical-align:middle"><a onclick="del_home()" href="javascript:;" class="btn btn-warning btn-disabled   btn-delte-home" > 删除</a></th>
+                            
+                        </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    
+    function del_home(){
+        //console.log($);
+        let id = $("#goods_id").html();
+        let prestr = $("#hid").val();
+        let url = '/qugou/public/index.php/admin/qu/goods/delete_home_pic?id=' + id+'&prestr='+prestr;
+        console.log("开始删除: "+ id +"  。。。");
+        $.get(url, function(data, status){
+            alert("状态："+status +"\n"+data);
+        });
+    }
+    </script>
+    <div class="form-group hidden layer-footer">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-12 col-sm-8">
+            <!--<button type="submit" class="btn btn-success btn-embossed disabled">{:__('Close')}</button>-->
+            <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();">{:__('Close')}</button>
+        </div>
+    </div>
+</div>
+</form>

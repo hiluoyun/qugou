@@ -1,0 +1,40 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-user_id" class="control-label col-xs-12 col-sm-2">{:__('User_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-user_id" data-rule="required" data-source="user/index" data-field="nickname" class="form-control selectpage" name="row[user_id]" type="text" value="{$row.user_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-content" class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-content" class="form-control summernote" rows="5" name="row[content]" cols="50">{$row.content}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img_urls" class="control-label col-xs-12 col-sm-2">{:__('Img_urls')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-img_urls" class="form-control" name="row[img_urls]" type="text" value="{$row.img_urls}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-like_num" class="control-label col-xs-12 col-sm-2">{:__('Like_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-like_num" data-rule="required" class="form-control" name="row[like_num]" type="number" value="{$row.like_num}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-comment_num" class="control-label col-xs-12 col-sm-2">{:__('Comment_num')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-comment_num" data-rule="required" class="form-control" name="row[comment_num]" type="number" value="{$row.comment_num}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

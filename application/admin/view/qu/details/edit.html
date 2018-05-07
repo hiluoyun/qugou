@@ -1,0 +1,58 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label for="c-goods_id" class="control-label col-xs-12 col-sm-2">{:__('Goods_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-goods_id" data-rule="required" data-source="goods/index" class="form-control selectpage" name="row[goods_id]" type="text" value="{$row.goods_id}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-img_urls" class="control-label col-xs-12 col-sm-2">{:__('Img_urls')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-img_urls" class="form-control " rows="5" name="row[img_urls]" cols="50">{$row.img_urls}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-video_urls" class="control-label col-xs-12 col-sm-2">{:__('Video_urls')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-video_urls" class="form-control " rows="5" name="row[video_urls]" cols="50">{$row.video_urls}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-desc" class="control-label col-xs-12 col-sm-2">{:__('Desc')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-desc" data-rule="required" class="form-control " rows="5" name="row[desc]" cols="50">{$row.desc}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-tb_link" class="control-label col-xs-12 col-sm-2">{:__('Tb_link')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-tb_link" data-rule="required" class="form-control " rows="5" name="row[tb_link]" cols="50">{$row.tb_link}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-jd_link" class="control-label col-xs-12 col-sm-2">{:__('Jd_link')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-jd_link" class="form-control " rows="5" name="row[jd_link]" cols="50">{$row.jd_link}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-is_delete" class="control-label col-xs-12 col-sm-2">{:__('Is_delete')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-is_delete" class="form-control" name="row[is_delete]" type="number" value="{$row.is_delete}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-category" class="control-label col-xs-12 col-sm-2">{:__('Category')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-category" data-rule="required" class="form-control" name="row[category]" type="number" value="{$row.category}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

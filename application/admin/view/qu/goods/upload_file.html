@@ -1,0 +1,106 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="c-local" class="control-label col-xs-12 col-sm-2">excel文件:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[local]" id="c-local" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-local" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-local-goods" class="btn btn-primary plupload" data-input-id="c-local" data-url="{:url('/admin/qu/goods/dealUploadExcel')}"><i class="fa fa-upload"></i> 商品数据</button>
+        </div>
+    </div>
+
+<div class="form-group">
+        <label for="c-local-pic-url" class="control-label col-xs-12 col-sm-2">图片URL(excel):</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[local]" id="c-local-pic-url" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="c-local-pic-url" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-local-goods-pic" class="btn btn-primary plupload" data-input-id="c-local-pic-url" data-url="{:url('/admin/qu/goods/dealUploadPicExcel')}"><i class="fa fa-upload"></i> 商品图片下载</button>
+        </div>
+    </div>
+    <div style="margin-top: 50px">
+        <div class="col-xs-12 col-sm-3 col-md-6">
+            <a href="javascript:;" class="btn btn-info  btn-qiniu-home-pics" onclick="loadAjax('1')"> 上传首页图片</a>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-6">
+            <a href="javascript:;" class="btn btn-success  btn-qiniu-detail-pics" onclick="loadAjax('2')"> 上传详情图片</a>
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            <a href="javascript:;" class="btn btn-warning  btn-qiniu-videos" onclick="loadAjax('3')"> 上传视频</a>
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            <a href="javascript:;" class="btn btn-primary  btn-qiniu-ad-pics" onclick="loadAjax('4')"> 上传广告图片</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function loadAjax(cate){
+            
+            let url = '/qugou/public/index.php/api/qiniu/qiniu_upload?category=' + cate;
+            console.log("开始上传: "+cate+"  。。。");
+            $.get(url, function(data, status){
+                alert("状态："+status +"\n"+data);
+            });
+        }
+    </script>
+    <!-- <div class="form-group">
+        <label for="c-local-zip" class="control-label col-xs-12 col-sm-2">图片详情压缩zip:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[local]" id="c-local-zip" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="c-local-zip" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-local-goods-zip" class="btn btn-primary plupload" data-input-id="c-local-zip" data-url="{:url('/admin/qu/goods/dealUploadZip')}"><i class="fa fa-upload"></i> 详情图片</button>
+        </div>
+    </div> -->
+
+    <!-- <div class="form-group">
+        <label for="c-local-zip-home" class="control-label col-xs-12 col-sm-2">首页图片压缩zip:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[local]" id="c-local-zip-home" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="c-local-zip-home" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-local-goods-zip-home" class="btn btn-primary plupload" data-input-id="c-local-zip-home" data-url="{:url('/admin/qu/goods/dealUploadHomePic')}"><i class="fa fa-upload"></i> 商品首页图片</button>
+        </div>
+    </div> -->
+
+    <!-- <div class="form-group">
+        <label for="c-local-zip-ad" class="control-label col-xs-12 col-sm-2">首页图片压缩zip:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" name="row[local]" id="c-local-zip-ad" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="c-local-zip-ad" class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button id="plupload-local-goods-zip-ad" class="btn btn-primary plupload" data-input-id="c-local-zip-ad" data-url="{:url('/admin/qu/goods/dealUploadAdPic')}"><i class="fa fa-upload"></i> 广告图片</button>
+        </div>
+    </div> -->
+
+    
+
+        
+    <div class="form-group hidden layer-footer">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-12 col-sm-8">
+            <!--<button type="submit" class="btn btn-success btn-embossed disabled">{:__('Close')}</button>-->
+            <button type="reset" class="btn btn-primary btn-embossed btn-close" onclick="Layer.closeAll();">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>
