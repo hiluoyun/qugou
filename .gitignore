@@ -1,0 +1,12 @@
+/nbproject/
+.idea
+*.log
+thinkphp
+vendor
+runtime
+application/database.php
+application/config.php
+/public/uploads
+public/temp
+composer.lock
+.phpintel/
